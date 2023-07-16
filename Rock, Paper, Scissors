@@ -1,0 +1,26 @@
+I created a Rock, Paper, Scissors Game (In Python)
+
+import random
+
+options = ["rock", "paper", "scissors"]
+winning_combinations = [("rock", "scissors"), ("paper", "rock"), ("scissors", "paper")]
+
+while True:
+    in_shoot = input("Play! Choose rock, paper, or scissors? ").lower()
+    if in_shoot not in options:
+        print("Enter a valid choice!")
+    else:
+        shoot = random.choice(options)
+        print("You chose:", in_shoot)
+        print("I chose:", shoot)
+
+        if in_shoot == shoot:
+            print("It's a tie!")
+        elif (in_shoot, shoot) in winning_combinations:
+            print("You win, not like it means anything!")
+        else:
+            print("You lose, and you probably will again!")
+
+        play_again = input("Do you want to play again, chicken? (yes/no) ").lower()
+        if play_again != "yes":
+            break
